@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
 import './App.css';
+import Home from './screen/Home';
+import OperatingArea from './screen/OperatingArea';
+import Layout from './Layout';
+import Declaimer from './screen/Disclaimer';
+import NewProject from './screen/NewProject';
+import Login from './screen/Login';
+import AccountSetup from './screen/AccountSetup';
+import ProjectDetails from './screen/ProjectDetails';
+import Bond from './screen/Bond';
+import Mint from './screen/Mint';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Layout className="main">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/operating-area" component={OperatingArea} />
+          <Route exact path="/declaimer" component={Declaimer} />
+          <Route exact path="/account-setup" component={AccountSetup} />
+          <Route exact path="/new-project" component={NewProject} />
+          <Route exact path="/project-details" component={ProjectDetails} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/bond" component={Bond} />
+          <Route exact path="/mint-nft" component={Mint} />
+        </Switch>
+      </Layout>
   );
 }
 
