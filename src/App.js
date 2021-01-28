@@ -14,7 +14,6 @@ import Login from './screen/Login';
 import AccountSetup from './screen/AccountSetup';
 import Bond from './screen/Bond';
 import Mint from './screen/Mint';
-import Map from './screen/Map';
 import PjContainer from "./container/PJContainer";
 
 function App() {
