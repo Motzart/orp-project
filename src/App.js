@@ -3,6 +3,8 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
+import "react-datepicker/dist/react-datepicker.css";
+
 import Home from './screen/Home';
 import OperatingArea from './screen/OperatingArea';
 import Layout from './Layout';
@@ -10,10 +12,9 @@ import Declaimer from './screen/Disclaimer';
 import NewProject from './screen/NewProject';
 import Login from './screen/Login';
 import AccountSetup from './screen/AccountSetup';
-import ProjectDetails from './screen/ProjectDetails';
 import Bond from './screen/Bond';
 import Mint from './screen/Mint';
-import Map from './screen/Map';
+import PjContainer from "./container/PJContainer";
 
 function App() {
   return (
@@ -24,11 +25,10 @@ function App() {
           <Route exact path="/declaimer" component={Declaimer} />
           <Route exact path="/account-setup" component={AccountSetup} />
           <Route exact path="/new-project" component={NewProject} />
-          <Route exact path="/project-details" component={ProjectDetails} />
+          <Route exact path="/project-details" component={PjContainer} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/bond" component={Bond} />
           <Route exact path="/bond" component={Mint} />
-          <Route exact path="/map" component={Map} />
         </Switch>
       </Layout>
   );
