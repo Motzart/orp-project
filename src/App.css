@@ -27,3 +27,13 @@ body {
 .main > footer {
     grid-area: footer;
 }
+.mr-auto a:last-child{
+    margin-left: 10px;
+}
+
+@media screen and (max-width:991px ) {
+    .mr-auto a:last-child{
+        margin-left: 0px;
+    }
+
+}

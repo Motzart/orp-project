@@ -13,6 +13,7 @@ import AccountSetup from './screen/AccountSetup';
 import ProjectDetails from './screen/ProjectDetails';
 import Bond from './screen/Bond';
 import Mint from './screen/Mint';
+import Map from './screen/Map';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <Route exact path="/project-details" component={ProjectDetails} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/bond" component={Bond} />
-          <Route exact path="/mint-nft" component={Mint} />
+          <Route exact path="/bond" component={Mint} />
+          <Route exact path="/map" component={Map} />
         </Switch>
       </Layout>
   );
