@@ -8,10 +8,7 @@ const containerStyle = {
     margin: 'auto'
 };
 
-const center = {
-    lat: -3.745,
-    lng: -38.523
-};
+
 const options = {
     fillColor: "lightgreen",
     fillOpacity: 0.5,
@@ -68,8 +65,6 @@ const  Map =()=> {
     );
     const handleOverlayComplete=(e)=> {
 
-        const polygon = e.overlay;
-
         //...
     }
 
@@ -96,7 +91,6 @@ const  Map =()=> {
                     onMouseUp={onEdit}
                     // Event used when dragging the whole Polygon
                     onDragEnd={onEdit}
-                    onLoad={onLoad}
                     // ref={polygonRef}
                     paths={path}
                     options={options}
