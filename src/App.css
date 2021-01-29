@@ -38,6 +38,10 @@ body {
     align-items: baseline;
 
 }
+.rd__wrapper{
+    display: flex;
+    align-items: baseline;
+}
 .data-picker__label{
     margin-right: 5px;
 }

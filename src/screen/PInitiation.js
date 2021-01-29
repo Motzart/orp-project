@@ -6,12 +6,12 @@ const PInitiation = () => {
     return (
         <Container>
             <Form.Group as={Row} controlId="formPlaintextPassword">
-                <Form.Label column sm="4">Scope of Project (SURFACE AREA )</Form.Label>
-                <Form.Label column sm="4">100 sq</Form.Label>
+                <Form.Label column sm="4">Project Creation Bond </Form.Label>
+                <Form.Label column sm="4">auto-fill</Form.Label>
             </Form.Group>
             <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="4">
-                    Data Upload Frequency (Minimum is Set Every 12 Months = first 2 years every 6 months)
+                    Data Upload Frequency, months
                 </Form.Label>
                 <Col sm="8"className='data-picker__wrapper'>
                     <Col  className='data-picker__wrapper'>
@@ -28,7 +28,6 @@ const PInitiation = () => {
                     </Col>
                     <Col className='data-picker__wrapper'>
                         <div className='data-picker__label'>next years</div>
-
                         <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                             <option selected>12</option>
                             <option value="12">12</option>
@@ -41,17 +40,12 @@ const PInitiation = () => {
                 </Col>
                 </Form.Group >
             <Form.Group as={Row} controlId="formPlaintextPassword">
-                <Form.Label column sm="4">Data Upload Frequency [auto-fill]
-                </Form.Label>
-                <Form.Label column sm="4">text</Form.Label>
-            </Form.Group>
-            <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="4">Number of Phases</Form.Label>
-                <Form.Label column sm="4">text</Form.Label>
+                <Form.Label column sm="4">auto-fill</Form.Label>
             </Form.Group>
             <Form.Group as={Row} controlId="formPlaintextPassword">
-                <Form.Label column sm="4">NFT Mint Cost</Form.Label>
-                <Form.Label column sm="4">text</Form.Label>
+                <Form.Label column sm="4">NFT Mint Cost, DAI</Form.Label>
+                <Form.Label column sm="4">auto-fill</Form.Label>
             </Form.Group>
             <PITable/>
         </Container>
