@@ -3,6 +3,7 @@ import GenInfo from "../../screen/GenInfo";
 import {Container,Accordion,Card,Button} from 'react-bootstrap';
 import PLocation from "../../screen/PLocation";
 import ReforeData from "../../screen/ReforeData";
+import PInitiation from "../../screen/PInitiation";
 
 const PjContainer = () => {
     return (
@@ -21,27 +22,43 @@ const PjContainer = () => {
                     <Card.Body><GenInfo/></Card.Body>
                 </Accordion.Collapse>
             </Card>
-            <Card>
-                <Card.Header>
-                    <Accordion.Toggle className='accordion' as={Button} variant="link" eventKey="1">
-                        2. PROJECT LOCATION
-                    </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="1">
-                    <Card.Body><PLocation/></Card.Body>
-                </Accordion.Collapse>
-            </Card>
-            <Card>
-                <Card.Header>
-                    <Accordion.Toggle className='accordion' as={Button} variant="link" eventKey="2">
-                        3. REFORESTATION DATA
-                    </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="2">
-                    <Card.Body><ReforeData/></Card.Body>
-                </Accordion.Collapse>
-            </Card>
         </Accordion>
+            <Accordion defaultActiveKey="1">
+                <Card>
+                    <Card.Header>
+                        <Accordion.Toggle className='accordion' as={Button} variant="link" eventKey="0">
+                            2. PROJECT LOCATION
+                        </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body><PLocation/></Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+            <Accordion defaultActiveKey="2">
+                <Card>
+                    <Card.Header>
+                        <Accordion.Toggle className='accordion' as={Button} variant="link" eventKey="0">
+                            3. REFORESTATION DATA
+                        </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body><ReforeData/></Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+            <Accordion defaultActiveKey="3">
+                <Card>
+                    <Card.Header>
+                        <Accordion.Toggle className='accordion' as={Button} variant="link" eventKey="0">
+                            4. PROJECT INITIATION
+                        </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body><PInitiation/></Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
         </Container>
     );
 };
