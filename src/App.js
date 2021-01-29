@@ -12,7 +12,6 @@ import Declaimer from './screen/Disclaimer';
 import NewProject from './screen/NewProject';
 import Login from './screen/Login';
 import AccountSetup from './screen/AccountSetup';
-import Bond from './screen/Bond';
 import Mint from './screen/Mint';
 import PjContainer from "./container/PJContainer";
 
@@ -27,7 +26,7 @@ function App() {
           <Route exact path="/new-project" component={NewProject} />
           <Route exact path="/project-details" component={PjContainer} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/bond" component={Bond} />
+          {/*<Route exact path="/bond" component={Bond} />*/}
           <Route exact path="/bond" component={Mint} />
         </Switch>
       </Layout>

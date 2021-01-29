@@ -4,6 +4,7 @@ import {Container,Accordion,Card,Button} from 'react-bootstrap';
 import PLocation from "../../screen/PLocation";
 import ReforeData from "../../screen/ReforeData";
 import PInitiation from "../../screen/PInitiation";
+import {Link} from "react-router-dom";
 
 const PjContainer = () => {
     return (
@@ -59,6 +60,8 @@ const PjContainer = () => {
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
+            <Link className="w-100 btn btn-lg btn-primary" to="/bond">Upload Project</Link>
+
         </Container>
     );
 };
