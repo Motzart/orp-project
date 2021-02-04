@@ -23,7 +23,10 @@ const  getInfoForMap=(lat,lng)=>API()
         return false;
 
 })
-export default {
+
+const wrapperAPI={
     API: API(),
     getInfoForMap
-};
+}
+
+export default wrapperAPI;

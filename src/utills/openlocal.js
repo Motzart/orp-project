@@ -1,6 +1,6 @@
 
 (function(root, factory) {
-    /* global define, module */
+    /* global define */
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define([], function(b) {
@@ -123,19 +123,19 @@
             return false;
         }
         // The separator is required.
-        if (code.indexOf(SEPARATOR_) == -1) {
+        if (code.indexOf(SEPARATOR_) === -1) {
             return false;
         }
-        if (code.indexOf(SEPARATOR_) != code.lastIndexOf(SEPARATOR_)) {
+        if (code.indexOf(SEPARATOR_) !== code.lastIndexOf(SEPARATOR_)) {
             return false;
         }
         // Is it the only character?
-        if (code.length == 1) {
+        if (code.length === 1) {
             return false;
         }
         // Is it in an illegal position?
         if (code.indexOf(SEPARATOR_) > SEPARATOR_POSITION_ ||
-            code.indexOf(SEPARATOR_) % 2 == 1) {
+            code.indexOf(SEPARATOR_) % 2 === 1) {
             return false;
         }
         // We can have an even number of padding characters before the separator,
@@ -146,23 +146,23 @@
                 return false;
             }
             // Not allowed to start with them!
-            if (code.indexOf(PADDING_CHARACTER_) == 0) {
+            if (code.indexOf(PADDING_CHARACTER_) === 0) {
                 return false;
             }
             // There can only be one group and it must have even length.
             var padMatch = code.match(new RegExp('(' + PADDING_CHARACTER_ + '+)', 'g'));
-            if (padMatch.length > 1 || padMatch[0].length % 2 == 1 ||
+            if (padMatch.length > 1 || padMatch[0].length % 2 === 1 ||
                 padMatch[0].length > SEPARATOR_POSITION_ - 2) {
                 return false;
             }
             // If the code is long enough to end with a separator, make sure it does.
-            if (code.charAt(code.length - 1) != SEPARATOR_) {
+            if (code.charAt(code.length - 1) !== SEPARATOR_) {
                 return false;
             }
         }
         // If there are characters after the separator, make sure there isn't just
         // one of them (not legal).
-        if (code.length - code.indexOf(SEPARATOR_) - 1 == 1) {
+        if (code.length - code.indexOf(SEPARATOR_) - 1 === 1) {
             return false;
         }
 
@@ -172,7 +172,7 @@
         // Check the code contains only valid characters.
         for (var i = 0, len = code.length; i < len; i++) {
             var character = code.charAt(i).toUpperCase();
-            if (character != SEPARATOR_ && CODE_ALPHABET_.indexOf(character) == -1) {
+            if (character !== SEPARATOR_ && CODE_ALPHABET_.indexOf(character) === -1) {
                 return false;
             }
         }
@@ -261,7 +261,7 @@
             throw new Error('ValueError: Parameters are not numbers');
         }
         if (codeLength < 2 ||
-            (codeLength < PAIR_CODE_LENGTH_ && codeLength % 2 == 1)) {
+            (codeLength < PAIR_CODE_LENGTH_ && codeLength % 2 === 1)) {
             throw new Error('IllegalArgumentException: Invalid Open Location Code length');
         }
         // Ensure that latitude and longitude are valid.
@@ -269,7 +269,7 @@
         longitude = normalizeLongitude(longitude);
         // Latitude 90 needs to be adjusted to be just less, so the returned code
         // can also be decoded.
-        if (latitude == 90) {
+        if (latitude === 90) {
             latitude = latitude - computeLatitudePrecision(codeLength);
         }
         var code = '';
@@ -303,7 +303,7 @@
             lngVal = Math.floor(lngVal / Math.pow(GRID_COLUMNS_, GRID_CODE_LENGTH_));
         }
         // Compute the pair section of the code.
-        for (var i = 0; i < PAIR_CODE_LENGTH_ / 2; i++) {
+        for (let i = 0; i < PAIR_CODE_LENGTH_ / 2; i++) {
             code = CODE_ALPHABET_.charAt(lngVal % ENCODING_BASE_) + code;
             code = CODE_ALPHABET_.charAt(latVal % ENCODING_BASE_) + code;
             latVal = Math.floor(latVal / ENCODING_BASE_);
@@ -375,7 +375,7 @@
             var colpv = GRID_LNG_FIRST_PLACE_VALUE_;
             // How many digits do we have to process?
             digits = Math.min(code.length, MAX_DIGIT_COUNT_);
-            for (var i = PAIR_CODE_LENGTH_; i < digits; i++) {
+            for (let i = PAIR_CODE_LENGTH_; i < digits; i++) {
                 var digitVal = CODE_ALPHABET_.indexOf(code.charAt(i));
                 var row = Math.floor(digitVal / GRID_COLUMNS_);
                 var col = digitVal % GRID_COLUMNS_;
@@ -496,7 +496,7 @@
         if (!isFull(code)) {
             throw new Error('ValueError: Passed code is not valid and full: ' + code);
         }
-        if (code.indexOf(PADDING_CHARACTER_) != -1) {
+        if (code.indexOf(PADDING_CHARACTER_) !== -1) {
             throw new Error('ValueError: Cannot shorten padded codes: ' + code);
         }
         code = code.toUpperCase();
