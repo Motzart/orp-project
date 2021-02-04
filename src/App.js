@@ -14,6 +14,7 @@ import Login from './screen/Login';
 import AccountSetup from './screen/AccountSetup';
 import Mint from './screen/Mint';
 import PjContainer from "./container/PJContainer";
+import MapBox from "./screen/MapBox";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
           <Route exact path="/account-setup" component={AccountSetup} />
           <Route exact path="/new-project" component={NewProject} />
           <Route exact path="/project-details" component={PjContainer} />
-          <Route exact path="/login" component={Login} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/map" component={MapBox} />
           {/*<Route exact path="/bond" component={Bond} />*/}
           <Route exact path="/bond" component={Mint} />
         </Switch>
