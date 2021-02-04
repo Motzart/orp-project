@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Form, Row} from "react-bootstrap";
-import Map from "./Map";
+import  {Link} from "react-router-dom";
 
 const PLocation = () => {
     return (
@@ -27,7 +27,7 @@ const PLocation = () => {
         </div>
         <div className="map__wrapper">
             <div className='map__label'>Map</div>
-            <Map/>
+            <Link to='/map'>Open Map</Link>
         </div>
         <Form.Group as={Row} controlId="formPlaintextPassword">
             <Form.Label column sm="2">
@@ -40,7 +40,6 @@ const PLocation = () => {
                 <Form.Control type="text" placeholder="lon" />
             </Col>
             </Form.Group>
-
     </Container>
     );
 };
