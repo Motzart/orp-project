@@ -7,7 +7,7 @@ import {Container} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import API from '../api';
-import olc  from '../utills/openlocal'
+// import olc  from '../utills/openlocal'
 const styles = {
     width: "100vw",
     height: "calc(100vh - 140px)",
@@ -20,7 +20,6 @@ const MapBox = () => {
     const [datePolygon, setDataPolygon] = useState({
         region: '',
         polygon: [],
-        codePlus: '',
         square: null
     });
     const [coord, setCoord] = useState({
@@ -86,7 +85,6 @@ const MapBox = () => {
                     setDataPolygon({
                         region: place.features[0].place_name,
                         polygon: data.features,
-                        codePlus: olc.encode(center[1], center[0]),
                         square: rounded_area
                     })
                 } else {
@@ -120,8 +118,6 @@ const MapBox = () => {
                     <span>{datePolygon.square}</span>
                     <span>Region</span>
                     <span>{datePolygon.region}</span>
-                    <span>Code Plus</span>
-                    <span>{datePolygon.codePlus}</span>
                     <Link to='/project-details'className="w-100 btn btn-lg btn-primary">Upload Data</Link>
 
                 </div>}
