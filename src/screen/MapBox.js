@@ -37,17 +37,17 @@ const MapBox = () => {
                 container: mapContainer.current, // container id
                 style: 'mapbox://styles/mapbox/satellite-v9', //hosted style id
                 center: [-91.874, 42.76], // starting position
-                zoom: 10
+                zoom: 14
             });
 
-            function rotate() {
-                map.easeTo({bearing: 40, duration: 5000, pitch: 0, zoom: 14});
-            };
+            // function rotate() {
+            //     map.easeTo({bearing: 40, duration: 5000, pitch: 0, zoom: 14});
+            // };
 
             map.on("load", () => {
                 setMap(map);
                 map.resize();
-                rotate()
+                // rotate()
             });
 
             map.on('move', () => {
