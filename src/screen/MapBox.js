@@ -7,7 +7,7 @@ import {Container} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import API from '../api';
-// import olc  from '../utills/openlocal'
+import olc  from '../utills/openlocal'
 const styles = {
     width: "100vw",
     height: "calc(100vh - 140px)",
@@ -20,6 +20,7 @@ const MapBox = () => {
     const [datePolygon, setDataPolygon] = useState({
         region: '',
         polygon: [],
+        codePlus: '',
         square: null
     });
     const [coord, setCoord] = useState({
@@ -36,17 +37,17 @@ const MapBox = () => {
                 container: mapContainer.current, // container id
                 style: 'mapbox://styles/mapbox/satellite-v9', //hosted style id
                 center: [-91.874, 42.76], // starting position
-                zoom: 14
+                zoom: 10
             });
 
-            // function rotate() {
-            //     map.easeTo({bearing: 40, duration: 5000, pitch: 0, zoom: 14});
-            // };
+            function rotate() {
+                map.easeTo({bearing: 40, duration: 5000, pitch: 0, zoom: 14});
+            };
 
             map.on("load", () => {
                 setMap(map);
                 map.resize();
-                // rotate()
+                rotate()
             });
 
             map.on('move', () => {
@@ -64,7 +65,7 @@ const MapBox = () => {
                     trash: true
                 }
             });
-            map.addControl(draw);
+            // map.addControl(draw);
 
             map.on('draw.create', updateArea);
             map.on('draw.delete', updateArea);
@@ -85,6 +86,7 @@ const MapBox = () => {
                     setDataPolygon({
                         region: place.features[0].place_name,
                         polygon: data.features,
+                        codePlus: olc.encode(center[1], center[0]),
                         square: rounded_area
                     })
                 } else {
@@ -118,6 +120,8 @@ const MapBox = () => {
                     <span>{datePolygon.square}</span>
                     <span>Region</span>
                     <span>{datePolygon.region}</span>
+                    <span>Code Plus</span>
+                    <span>{datePolygon.codePlus}</span>
                     <Link to='/project-details'className="w-100 btn btn-lg btn-primary">Upload Data</Link>
 
                 </div>}
