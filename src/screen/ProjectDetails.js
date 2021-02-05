@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import { useState }from 'react'
+import React, { useState }from 'react'
 import {Container, Form, Row, Col} from 'react-bootstrap';
 import  DatePicker from 'react-datepicker'
 
@@ -38,7 +38,7 @@ const ProjectDetails = () => {
           />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="dataId">
         <Form.Label column sm="4">
           Data Upload Frequency (Minimum is Set Every 12 Months = first 2 years every 6 months)
         </Form.Label>
@@ -73,7 +73,7 @@ const ProjectDetails = () => {
             <Form.Label column sm="4">100 sq</Form.Label>
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="treesId">
         <Form.Label column sm="4">
           Number of Trees
         </Form.Label>
@@ -81,7 +81,7 @@ const ProjectDetails = () => {
           <Form.Control type="text" placeholder="text" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="projId">
         <Form.Label column sm="4">
           Location of Project (Country, Region)
         </Form.Label>
@@ -90,7 +90,7 @@ const ProjectDetails = () => {
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="locId">
         <Form.Label column sm="4">
           Coordinates of Location
         </Form.Label>
@@ -109,7 +109,7 @@ const ProjectDetails = () => {
       <hr />
       Additional Project Details:
       <hr />
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="typeId">
         <Form.Label column sm="4">
           Input Species Type
         </Form.Label>
@@ -117,7 +117,7 @@ const ProjectDetails = () => {
           <Form.Control type="text" placeholder="text" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="budgetId">
         <Form.Label column sm="4">
           Budget
         </Form.Label>
@@ -125,7 +125,7 @@ const ProjectDetails = () => {
           <Form.Control type="text" placeholder="text" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="ogId">
         <Form.Label column sm="4">
           Connected Organizations
         </Form.Label>
@@ -134,7 +134,7 @@ const ProjectDetails = () => {
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="detailsId">
         <Form.Label column sm="4">
           Community Participation Details
         </Form.Label>
@@ -143,7 +143,7 @@ const ProjectDetails = () => {
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="plantId">
         <Form.Label column sm="4">
           Purpose of plantation
         </Form.Label>

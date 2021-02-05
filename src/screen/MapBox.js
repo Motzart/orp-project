@@ -81,7 +81,6 @@ const MapBox = () => {
                 }
                 if (data.features.length > 0) {
                     const areaData = area(data);
-// // restrict to area to 2 decimal points
                     let rounded_area = Math.round(areaData * 100) / 100;
                     setDataPolygon({
                         region: place.features[0].place_name,

@@ -9,7 +9,7 @@ const AccountSetup = () => (
     <br/>
     <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 className="display-4">Account Setup</h1>
-        <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Group as={Row} controlId="nameId">
             <Form.Label column sm="2">
                 Name
             </Form.Label>
@@ -20,11 +20,11 @@ const AccountSetup = () => (
                 Email
             </Form.Label>
             <Col sm="4">
-                <Form.Control type="text" placeholder="email" />
+                <Form.Control type="text"  placeholder="email" />
             </Col>
 
         </Form.Group>
-        <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Group as={Row} controlId="telId">
             <Form.Label column sm="2">
                 Phone
             </Form.Label>

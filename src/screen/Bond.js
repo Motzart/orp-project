@@ -7,7 +7,7 @@ const Bond = () => (
       <h1 className="display-4">Costs, Estimates, Fees, and Project Initiation</h1>
     </div>
     <Form>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="bondId">
         <Form.Label column sm="4">
           Project Creation Bond (Based Upon the Size of the Project)
         </Form.Label>
@@ -15,7 +15,7 @@ const Bond = () => (
           <Form.Control type="text" placeholder="..." />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="costId">
         <Form.Label column sm="4">
           NFT Mint Cost
         </Form.Label>
@@ -24,7 +24,7 @@ const Bond = () => (
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} controlId="formPlaintextPassword">
+      <Form.Group as={Row} controlId="phaseID">
         <Form.Label column sm="4">
           Phase 1 Data Upload Fee (Based on Number of Stages)
         </Form.Label>
