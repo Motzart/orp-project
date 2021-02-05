@@ -1,13 +1,13 @@
 import React, {useState, useEffect, useRef} from 'react';
 import mapboxgl from 'mapbox-gl'
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
-import area from '@turf/area';
-import centerOfMass from '@turf/center-of-mass';
+// import area from '@turf/area';
+// import centerOfMass from '@turf/center-of-mass';
 import {Container} from 'react-bootstrap'
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import 'mapbox-gl/dist/mapbox-gl.css';
-import API from '../api';
-import olc  from '../utills/openlocal'
+// import API from '../api';
+// import olc  from '../utills/openlocal'
 const styles = {
     width: "100vw",
     height: "calc(100vh - 140px)",
@@ -17,12 +17,12 @@ const styles = {
 
 const MapBox = () => {
     const [map, setMap] = useState(null);
-    const [datePolygon, setDataPolygon] = useState({
-        region: '',
-        polygon: [],
-        codePlus: '',
-        square: null
-    });
+    // const [datePolygon, setDataPolygon] = useState({
+    //     region: '',
+    //     polygon: [],
+    //     codePlus: '',
+    //     square: null
+    // });
     const [coord, setCoord] = useState({
         lng: 5,
         lat: 34,
@@ -115,16 +115,16 @@ const MapBox = () => {
             <div ref={el => (mapContainer.current = el)} style={styles}></div>
             <div className="calculation-box">
                 <p>Draw a polygon using the draw tools.</p>
-                {datePolygon.square > 0 && <div className='inside__block'>
-                    <span>Square Meters</span>
-                    <span>{datePolygon.square}</span>
-                    <span>Region</span>
-                    <span>{datePolygon.region}</span>
-                    <span>Code Plus</span>
-                    <span>{datePolygon.codePlus}</span>
-                    <Link to='/project-details'className="w-100 btn btn-lg btn-primary">Upload Data</Link>
+                {/*{datePolygon.square > 0 && <div className='inside__block'>*/}
+                {/*    <span>Square Meters</span>*/}
+                {/*    <span>{datePolygon.square}</span>*/}
+                {/*    <span>Region</span>*/}
+                {/*    <span>{datePolygon.region}</span>*/}
+                {/*    <span>Code Plus</span>*/}
+                {/*    <span>{datePolygon.codePlus}</span>*/}
+                {/*    <Link to='/project-details'className="w-100 btn btn-lg btn-primary">Upload Data</Link>*/}
 
-                </div>}
+                {/*</div>}*/}
             </div>
         </div>
         </Container>
