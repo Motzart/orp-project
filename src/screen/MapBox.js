@@ -65,41 +65,41 @@ const MapBox = () => {
                     trash: true
                 }
             });
-            // map.addControl(draw);
+            map.addControl(draw);
 
-            map.on('draw.create', updateArea);
-            map.on('draw.delete', updateArea);
-            map.on('draw.update', updateArea);
+            // map.on('draw.create', updateArea);
+            // map.on('draw.delete', updateArea);
+            // map.on('draw.update', updateArea);
 
-            async function updateArea(e) {
-                let data = draw.getAll();
-                let center = centerOfMass(e.features[0]).geometry.coordinates;
-                let place = await API.getInfoForMap(center[1], center[0]);
-                if (data.features.length > 1) {
-                    draw.delete(e.features[0].id);
-                    return false
-                }
-                if (data.features.length > 0) {
-                    const areaData = area(data);
-// // restrict to area to 2 decimal points
-                    let rounded_area = Math.round(areaData * 100) / 100;
-                    setDataPolygon({
-                        region: place.features[0].place_name,
-                        polygon: data.features,
-                        codePlus: olc.encode(center[1], center[0]),
-                        square: rounded_area
-                    })
-                } else {
-                    setDataPolygon({
-                        region: '',
-                        polygon: [],
-                        codePlus: null,
-                        square: 0
-                    })
-                    if (e.type !== 'draw.delete')
-                        alert('Use the draw tools to draw a polygon!');
-                }
-            }
+//             async function updateArea(e) {
+//                 let data = draw.getAll();
+//                 let center = centerOfMass(e.features[0]).geometry.coordinates;
+//                 let place = await API.getInfoForMap(center[1], center[0]);
+//                 if (data.features.length > 1) {
+//                     draw.delete(e.features[0].id);
+//                     return false
+//                 }
+//                 if (data.features.length > 0) {
+//                     const areaData = area(data);
+// // // restrict to area to 2 decimal points
+//                     let rounded_area = Math.round(areaData * 100) / 100;
+//                     setDataPolygon({
+//                         region: place.features[0].place_name,
+//                         polygon: data.features,
+//                         codePlus: olc.encode(center[1], center[0]),
+//                         square: rounded_area
+//                     })
+//                 } else {
+//                     setDataPolygon({
+//                         region: '',
+//                         polygon: [],
+//                         codePlus: null,
+//                         square: 0
+//                     })
+//                     if (e.type !== 'draw.delete')
+//                         alert('Use the draw tools to draw a polygon!');
+//                 }
+//             }
 
         };
 
