@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35dd5980-d94e-4f6f-b247-dc3ee5224fe2" name="Default Changelist" comment="fixed issues">
+    <list default="true" id="35dd5980-d94e-4f6f-b247-dc3ee5224fe2" name="Default Changelist" comment="hot fix vol3">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/MapBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/MapBox.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="new-map" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,7 +107,35 @@
       <option name="project" value="LOCAL" />
       <updated>1611861573403</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="hot fix">
+      <created>1612453899322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612453899322</updated>
+    </task>
+    <task id="LOCAL-00005" summary="hot fix vol2">
+      <created>1612512760299</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612512760299</updated>
+    </task>
+    <task id="LOCAL-00006" summary="hot fix vol3">
+      <created>1612513004590</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612513004590</updated>
+    </task>
+    <task id="LOCAL-00007" summary="hot fix vol4">
+      <created>1612514740082</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612514740082</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,18 +145,26 @@
     <MESSAGE value="added map for project" />
     <MESSAGE value="fixed issues" />
     <MESSAGE value="added new elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new elements" />
+    <MESSAGE value="hot fix" />
+    <MESSAGE value="hot fix vol2" />
+    <MESSAGE value="hot fix vol3" />
+    <MESSAGE value="hot fix vol4" />
+    <option name="LAST_COMMIT_MESSAGE" value="hot fix vol4" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="23" key="CommitChangelistDialog2" timestamp="1611861573249">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="297" y="23" key="CommitChangelistDialog2" timestamp="1612514739974">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
+    <state x="297" y="23" key="CommitChangelistDialog2/-1920.-123.1920.1057/0.23.1440.814@0.23.1440.814" timestamp="1612453899213" />
     <state x="297" y="23" key="CommitChangelistDialog2/1440.155.1366.694/0.23.1440.877@0.23.1440.877" timestamp="1611861573249" />
+    <state x="297" y="23" key="CommitChangelistDialog2/1440.155.1366.745/0.23.1440.812@0.23.1440.812" timestamp="1612514739974" />
     <state x="297" y="23" key="CommitChangelistDialog2/1440.155.1366.745/0.23.1440.820@0.23.1440.820" timestamp="1611820266307" />
-    <state x="320" y="232" key="Vcs.Push.Dialog.v2" timestamp="1611861575849">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="320" y="217" key="Vcs.Push.Dialog.v2" timestamp="1612514742912">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
+    <state x="320" y="217" key="Vcs.Push.Dialog.v2/-1920.-123.1920.1057/0.23.1440.814@0.23.1440.814" timestamp="1612453902355" />
     <state x="320" y="232" key="Vcs.Push.Dialog.v2/1440.155.1366.694/0.23.1440.877@0.23.1440.877" timestamp="1611861575849" />
+    <state x="320" y="217" key="Vcs.Push.Dialog.v2/1440.155.1366.745/0.23.1440.812@0.23.1440.812" timestamp="1612514742912" />
     <state x="320" y="218" key="Vcs.Push.Dialog.v2/1440.155.1366.745/0.23.1440.820@0.23.1440.820" timestamp="1611820268560" />
     <state x="420" y="233" width="600" height="490" key="find.popup" timestamp="1611819568194">
       <screen x="0" y="23" width="1440" height="820" />
@@ -137,5 +174,16 @@
       <screen x="0" y="23" width="1440" height="820" />
     </state>
     <state x="383" y="164" width="672" height="678" key="search.everywhere.popup/1440.155.1366.745/0.23.1440.820@0.23.1440.820" timestamp="1611819341223" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/screen/MapBox.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

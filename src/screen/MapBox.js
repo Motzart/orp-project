@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import mapboxgl from 'mapbox-gl'
-import MapboxDraw from "@mapbox/mapbox-gl-draw";
+// import MapboxDraw from "@mapbox/mapbox-gl-draw";
 // import area from '@turf/area';
 // import centerOfMass from '@turf/center-of-mass';
 import {Container} from 'react-bootstrap'
@@ -58,14 +58,14 @@ const MapBox = () => {
                 })
             });
 
-            let draw = new MapboxDraw({
-                displayControlsDefault: false,
-                controls: {
-                    polygon: true,
-                    trash: true
-                }
-            });
-            map.addControl(draw);
+            // let draw = new MapboxDraw({
+            //     displayControlsDefault: false,
+            //     controls: {
+            //         polygon: true,
+            //         trash: true
+            //     }
+            // });
+            // map.addControl(draw);
 
             // map.on('draw.create', updateArea);
             // map.on('draw.delete', updateArea);
