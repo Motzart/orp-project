@@ -40,7 +40,7 @@ const Chart = () => {
     return (
         <Container>
             <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-                <h1 className="display-4">Project Upload Timeline:
+                <h1 className="display-4">Project Upload Timeline
                 </h1>
             </div>
             <ComposedChart
