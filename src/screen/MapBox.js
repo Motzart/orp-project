@@ -6,13 +6,16 @@ import centerOfMass from '@turf/center-of-mass';
 import {Container} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import 'mapbox-gl/dist/mapbox-gl.css';
+import {observer} from 'mobx-react';
+import store from '../store'
 import API from '../api';
-import olc  from '../utills/openlocal'
+import olc from '../utills/openlocal'
+
 const styles = {
     width: "100vw",
     height: "calc(100vh - 140px)",
     position: "absolute",
-    left:0
+    left: 0
 };
 
 const MapBox = () => {
@@ -21,7 +24,8 @@ const MapBox = () => {
         region: '',
         polygon: [],
         codePlus: '',
-        square: null
+        square: null,
+        coordinate: {}
     });
     const [coord, setCoord] = useState({
         lng: 5,
@@ -86,15 +90,32 @@ const MapBox = () => {
                         region: place.features[0].place_name,
                         polygon: data.features,
                         codePlus: olc.encode(center[1], center[0]),
-                        square: rounded_area
+                        square: rounded_area,
+                        coordinate: {longitude: center[0], latitude: center[1]}
+                    })
+                    store.setConfigCoordinate({
+                        region: place.features[0].place_name,
+                        polygon: data.features,
+                        codePlus: olc.encode(center[1], center[0]),
+                        square: rounded_area,
+                        coordinate: {longitude: center[0], latitude: center[1]}
                     })
                 } else {
                     setDataPolygon({
                         region: '',
                         polygon: [],
                         codePlus: null,
-                        square: 0
+                        square: 0,
+                        coordinate: {longitude: 0, latitude: 0}
                     })
+                    store.setConfigCoordinate({
+                        region: '',
+                        polygon: [],
+                        codePlus: null,
+                        square: 0,
+                        coordinate: {longitude: '', latitude: ''}
+                    })
+
                     if (e.type !== 'draw.delete')
                         alert('Use the draw tools to draw a polygon!');
                 }
@@ -109,25 +130,27 @@ const MapBox = () => {
 
     return (
         <Container>
-        <div className='box'>
-            <div className='box-info'><div>Longitude: {coord.lng} | Latitude: {coord.lat} | Zoom: {coord.zoom}</div> </div>
-            <div ref={el => (mapContainer.current = el)} style={styles}></div>
-            <div className="calculation-box">
-                <p>Draw a polygon using the draw tools.</p>
-                {datePolygon.square > 0 && <div className='inside__block'>
-                    <span>Square Meters</span>
-                    <span>{datePolygon.square}</span>
-                    <span>Region</span>
-                    <span>{datePolygon.region}</span>
-                    <span>Code Plus</span>
-                    <span>{datePolygon.codePlus}</span>
-                    <Link to='/project-details'className="w-100 btn btn-lg btn-primary">Upload Data</Link>
+            <div className='box'>
+                <div className='box-info'>
+                    <div>Longitude: {coord.lng} | Latitude: {coord.lat} | Zoom: {coord.zoom}</div>
+                </div>
+                <div ref={el => (mapContainer.current = el)} style={styles}></div>
+                <div className="calculation-box">
+                    <p>Draw a polygon using the draw tools.</p>
+                    {datePolygon.square > 0 && <div className='inside__block'>
+                        <span>Square Meters</span>
+                        <span>{datePolygon.square}</span>
+                        <span>Region</span>
+                        <span>{datePolygon.region}</span>
+                        <span>Code Plus</span>
+                        <span>{datePolygon.codePlus}</span>
+                        <Link to='/project-details' className="w-100 btn btn-lg btn-primary">Upload Data</Link>
 
-                </div>}
+                    </div>}
+                </div>
             </div>
-        </div>
         </Container>
     );
 };
 
-export default MapBox;
+export default observer(MapBox);

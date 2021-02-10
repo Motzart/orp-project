@@ -1,47 +1,43 @@
 import React from 'react';
 import {Col, Container, Form, Row} from "react-bootstrap";
-import  {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+import {observer} from "mobx-react";
+import store from '../store'
 
 const PLocation = () => {
+    const {configCoordinate} = store;
+
     return (
-    <Container>
-        <div className='location'>
-        <div className='select-wrapper'>
-            <div className='select-label'>Country:</div>
-        <select className="form-select" aria-label="Default select example">
-            <option selected>Country</option>
-            <option value="USA">USA</option>
-            <option value="Sweden">Sweden</option>
-            <option value="Ukraine">Ukraine</option>
-        </select>
-        </div>
-            <div className='select-wrapper'>
-                <div className='select-label'>Region:</div>
-                <select className="form-select" aria-label="Default select example">
-                    <option selected>Region</option>
-                    <option value="Text">Text</option>
-                    <option value="Text">Text</option>
-                    <option value="Text">Text</option>
-                </select>
+        <Container>
+            <div className="map__wrapper">
+                <div className='map__label'>Map</div>
+                <Link to='/map'>Open Map</Link>
             </div>
-        </div>
-        <div className="map__wrapper">
-            <div className='map__label'>Map</div>
-            <Link to='/map'>Open Map</Link>
-        </div>
-        <Form.Group as={Row} controlId="formPlaintextPassword">
-            <Form.Label column sm="2">
-                Coordinates
-            </Form.Label>
-            <Col sm="4">
-                <Form.Control type="text" placeholder="lat" />
-            </Col>
-            <Col sm="4">
-                <Form.Control type="text" placeholder="lon" />
-            </Col>
+            <Form.Group as={Row} >
+                <Form.Label column sm="2">
+                    Coordinates
+                </Form.Label>
+                <Col sm="4">
+                    <Form.Control type="text" placeholder="lat" value={configCoordinate.coordinate.latitude || ''}/>
+                </Col>
+                <Col sm="4">
+                    <Form.Control type="text" placeholder="lon" value={configCoordinate.coordinate.longitude || ''}/>
+                </Col>
             </Form.Group>
-    </Container>
+            <Form.Group as={Row} >
+                <Form.Label column sm="2">
+                    Region
+                </Form.Label>
+                <Col sm="8">
+                    <Form.Control type="text" placeholder="Region" value={configCoordinate.region || ''}/>
+                </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+                <Form.Label column sm="4">Google Plus Code </Form.Label>
+                <Form.Label column sm="4">{configCoordinate.codePlus || ''}</Form.Label>
+            </Form.Group>
+        </Container>
     );
 };
 
-export default PLocation;
+export default observer(PLocation);

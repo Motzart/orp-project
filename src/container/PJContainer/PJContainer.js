@@ -60,7 +60,7 @@ const PjContainer = () => {
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
-            <Link className="w-100 btn btn-lg btn-primary" to="/bond">Upload Project</Link>
+            <Link className="w-100 btn btn-lg btn-primary" to="/bond">Create Project</Link>
 
         </Container>
     );

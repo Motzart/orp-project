@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import "react-datepicker/dist/react-datepicker.css";
+import 'bootstrap/dist/css/bootstrap-reboot.min.css';
 
 import Home from './screen/Home';
 import OperatingArea from './screen/OperatingArea';
